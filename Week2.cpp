@@ -150,11 +150,12 @@ int main(){
 
 9. 쇠막대기
 
+char x[100001];
+
 int main(){
-  char x[100001];
-  scanf("%s", x);
   stack<int> s;
   int p = 0;
+  scanf("%s", x);
   for(int i = 0; x[i]; i++){
     if(x[i] == '(')
       s.push(i);
@@ -170,4 +171,24 @@ int main(){
     }
   }
   printf("%d", p);
+}
+
+10. 탑
+
+int tower[500001];
+stack<pair<int, int>> s;
+
+int main(){
+  int n, a;
+  cin >> n;
+  s.push({ 99999999, 0 });
+  for(int i = 0; i < n; i++){
+    cin >> a;
+    while(s.top().first < a)
+      s.pop();
+    tower[i] = s.top().second;
+    s.push({ a, i+1 });
+  }
+  for(int i = 0; i < n; i++)
+    printf("%d ", tower[i]);
 }*/
