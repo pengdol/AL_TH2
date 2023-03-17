@@ -100,4 +100,74 @@ int main(){
   for(int i = 0; i < 10; i++)
     printf("%d ", arr1[i]);
 }
-*/
+
+7. next_permutation
+
+vector <int> v;
+
+void print_vector(int n){
+  for(int i = 0; i < n; i++){
+    cout << v[i] << ' ';
+  }
+  cout << "\n\n";
+}
+
+int main(void){
+  int n, r;
+  int cnt = 0;
+  scanf("%d", &n);
+
+  for(int i = 1; i <= n; i++){
+    v.push_back(i);
+  }
+  print_vector(n);
+
+  do{
+    cout << ++cnt << " : ";
+    print_vector(n);
+  }while(next_permutation(v.begin(), v.end()));
+}
+
+8. 카드게임
+
+int main(){
+  int num = 10;
+  int a[11], b[11];
+  for(int i = 1; i <= num; i++)
+    scanf("%d", &a[i]);
+  for(int i = 1; i <= num; i++)
+    scanf("%d", &b[i]);
+  int awin = 0, bwin = 0, same = 0;
+  for(int i = 1; i <= num; i++){
+    if(a[i] > b[i]) awin++;
+    else if (a[i] < b[i]) bwin++;
+    else same++;
+  }
+  if(awin > bwin) printf("A");
+  else if(awin < bwin) printf("B");
+  else printf("D");
+}
+
+9. 쇠막대기
+
+int main(){
+  char x[100001];
+  scanf("%s", x);
+  stack<int> s;
+  int p = 0;
+  for(int i = 0; x[i]; i++){
+    if(x[i] == '(')
+      s.push(i);
+    else{
+      if(s.top() + 1 == i){
+        s.pop();
+        p += s.size();
+      }
+      else{
+        s.pop();
+        p += 1;
+      }
+    }
+  }
+  printf("%d", p);
+}*/
