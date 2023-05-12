@@ -28,7 +28,4 @@ int main(){
     a[i] = 0;
   for(int i = m; i <= n; i++) 
     if(a[i] == 1) cout << i << '\n';
-}
-
-3. 가로수
-*/
+}*/
